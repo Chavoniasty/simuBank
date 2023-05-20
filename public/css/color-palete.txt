@@ -1,0 +1,3 @@
+seagreen    - #499167
+anti white  - #EEEEEE
+black olive - #303A2B
