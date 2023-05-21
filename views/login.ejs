@@ -13,18 +13,20 @@
 <body class="formBody">
     <main class="loginWindow">
         <h1>Login into your account</h1>
-        <label for="login">Your email:</label>
-        <input type="text" name="login" id="loginEmail">
-        <label for="password">Your password:</label>
-        <input type="text" name="password" id="loginPassword">
-        <button type="submit">
-            Login
-        </button>
-        <ul class="loginList">
-            <li>
-                <a href="/register">Don't have an account? Register now!</a>
-            </li>
-        </ul>
+        <form class="loginWindow" method="post">
+            <label for="login">Your email:</label>
+            <input type="text" name="email" id="email">
+            <label for="password">Your password:</label>
+            <input type="password" name="password" id="loginPassword">
+            <button type="submit">
+                Login
+            </button>
+            <ul class="loginList">
+                <li>
+                    <a href="/register">Don't have an account? Register now!</a>
+                </li>
+            </ul>
+        </form>
     </main>
 </body>
 
