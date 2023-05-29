@@ -10,55 +10,101 @@
     <title>simuBank - we care!</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/slider.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <script src="../utils/slider.js"></script>
 </head>
 
 <body class="container">
-    <header class="navbar">
-        <h1 class="navbar-logo" href="/">simuBank</h1>
-        <ul class="navbar-list">
-            <li class="navbar-list-element">
-                <a class="navbar-link" href="/register">
-                    Register
-                </a>
-            <li class="navbar-list-element">
-                <a class="navbar-link" href=/login>
-                    Log in
-                </a>
-        </ul>
-    </header>
-    <main>
-        <div class="intro">
-            <div class="intro-motto">
-                <h2>Simu Bank </br> We care about You</h2>
+    <%- navbar %>
+        <main>
+            <div class="intro">
+                <div class="intro-motto">
+                    <h2>Simu Bank </br> We care about You</h2>
+                </div>
+                <div class="intro-image">
+                    <img src="/images/people.jpg" alt="">
+                </div>
             </div>
-            <div class="intro-image">
-                <img src="/images/people.jpg" alt="">
+            <div class="info">
+                <div class="info-text">
+                    <h2 class="green-text">About Us</h2>
+                    <p>At our bank, we are committed to providing you with reliable and convenient financial
+                        services
+                        that
+                        meet
+                        your individual needs. We pride ourselves on being a trusted institution that has been
+                        serving
+                        our
+                        community for many years.
+                        Our range of services includes personal and business banking, loans, credit cards, and
+                        investment
+                        opportunities. We also offer online and mobile banking options, making it easier for you to
+                        manage
+                        your
+                        finances on the go.
+                    </p>
+                    <p>
+                        Our team of knowledgeable and friendly professionals is here to assist you with any
+                        questions or
+                        concerns you may have. We believe in building lasting relationships with our clients and
+                        providing
+                        them
+                        with the highest level of customer service.
+
+                        We are dedicated to ensuring your financial security and privacy. Our bank uses advanced
+                        security
+                        measures to protect your personal and financial information, so you can rest assured that
+                        your
+                        money
+                        is
+                        in safe hands.
+                    </p>
+                    <p>
+                        Thank you for choosing our bank as your financial partner. We look forward to serving you
+                        and
+                        helping
+                        you achieve your financial goals.
+                    </p>
+                </div>
+                <div class="info-img">
+                    <img src="/images/ceo.bmp" alt="">
+                </div>
+
             </div>
-        </div>
-        <div class="info">
-            <h3>Info</h3>
-            <p>At our bank, we are committed to providing you with reliable and convenient financial services that meet
-                your individual needs. We pride ourselves on being a trusted institution that has been serving our
-                community for many years.
-                Our range of services includes personal and business banking, loans, credit cards, and investment
-                opportunities. We also offer online and mobile banking options, making it easier for you to manage your
-                finances on the go.
-
-                Our team of knowledgeable and friendly professionals is here to assist you with any questions or
-                concerns you may have. We believe in building lasting relationships with our clients and providing them
-                with the highest level of customer service.
-
-                We are dedicated to ensuring your financial security and privacy. Our bank uses advanced security
-                measures to protect your personal and financial information, so you can rest assured that your money is
-                in safe hands.
-
-                Thank you for choosing our bank as your financial partner. We look forward to serving you and helping
-                you achieve your financial goals.</p>
-        </div>
-    </main>
-    <footer>
-        footer
-    </footer>
+            </div>
+            <!-- <div class="slider">
+                <h2 class="green-text">Who trusted us?</h2>
+                <button>
+                    Left
+                </button>
+                <div class="slide">
+                    <img src="/images/logoNode.png" alt="nodeJs logo">
+                    NodeJS
+                </div>
+                <div class="slide">
+                    <img src="/images/logoHTML.png" alt="HTML logo">
+                    HTML
+                </div>
+                <div class="slide">
+                    <img src="/images/logoCSS.png" alt="CSS logo">
+                    CSS
+                </div>
+                <div class="slide">
+                    <img src="/images/logoJS.png" alt="JS logo">
+                    JS
+                </div>
+                <div class="slide">
+                    <img src="/images/logoVSC.png" alt="VSC logo">
+                    VSC
+                </div>
+                <button>
+                    Right
+                </button>
+            </div> -->
+        </main>
+        <%- footer %>
 </body>
 
 </html>

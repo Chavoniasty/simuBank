@@ -1,0 +1,23 @@
+.formBody {
+    width: 100%;
+    height: 86vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginList {
+    list-style: none;
+}
+
+.loginWindow {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
+
+.loginBorder {
+    border: 1px solid #499167;
+    border-radius: 5px;
+    padding: 1rem;
+}

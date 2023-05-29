@@ -7,8 +7,13 @@ router.get('/', (req, res) => {
         return;
     }
     const user = req.session.user;
-    console.log(user);
     res.render('account.ejs', { user: user })
 })
+
+
+router.get('/logout', function (req, res) {
+    req.session.destroy();
+    res.redirect('/');
+});
 
 module.exports = router;

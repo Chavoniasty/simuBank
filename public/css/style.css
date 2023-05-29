@@ -4,10 +4,15 @@
     outline: 1px solid limegreen;
 } */
 
+/* * {
+    box-sizing: border-box;
+    outline: 1px solid limegreen;
+} */
+
+
 html {
     scroll-behavior: smooth;
     font-family: "Montserrat";
-
 }
 
 body {
@@ -15,33 +20,6 @@ body {
     margin: 0;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.6rem;
-}
-
-.navbar-logo {
-    margin: 0;
-    color: seagreen;
-}
-
-.navbar-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-list-element {
-    padding: 1rem;
-}
-
-.navbar-link {
-
-    color: seagreen
-}
 
 main {
     display: flex;
@@ -69,7 +47,6 @@ main {
     animation: come-from-left 750ms;
 }
 
-
 .intro-image {
     width: 70%;
 }
@@ -79,30 +56,43 @@ main {
     height: 100%;
 }
 
-
-
-
 @keyframes come-from-left {
     0% {
         transform: translateX(-100%);
     }
 }
 
+.green-text {
+    color: #499167;
+}
 
-.formBody {
-    width: 100vw;
-    height: 100vh;
+.info {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.1rem;
+}
+
+.info h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.info-text {
+    width: 80%;
+    padding: 1rem;
+    text-align: justify;
+}
+
+.info-img {
+    display: flex;
+    flex-direction: column-reverse;
     align-items: center;
+    padding: 1rem;
 }
 
-.loginList {
-    list-style: none;
-}
-
-.loginWindow {
-    display: flex;
-    flex-direction: column;
-    width: 25vw;
+.info-img img {
+    width: 60%;
+    border-radius: 10%;
 }

@@ -10,26 +10,33 @@
     <title>simuBank - Login</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/logform.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
 </head>
 
-<body class="formBody">
-    <main class="loginWindow">
-        <h1>Login into your account</h1>
-        <form class="loginWindow" method="post">
-            <label for="login">Your email:</label>
-            <input type="text" name="email" id="email">
-            <label for="password">Your password:</label>
-            <input type="password" name="password" id="loginPassword">
-            <button type="submit">
-                Login
-            </button>
-            <ul class="loginList">
-                <li>
-                    <a href="/register">Don't have an account? Register now!</a>
-                </li>
-            </ul>
-        </form>
-    </main>
+<body>
+    <%- navbar %>
+        <main class="formBody">
+            <div class="loginWindow loginBorder">
+                <h1>Login into <span class="green-text">your account</span></h1>
+                <form class="loginWindow" method="post">
+                    <label for="login">Your email:</label>
+                    <input type="text" name="email" id="email">
+                    <label for="password">Your password:</label>
+                    <input type="password" name="password" id="loginPassword">
+                    <button type="submit">
+                        Login
+                    </button>
+                    <ul class="loginList">
+                        <li>
+                            <a href="/register">Don't have an account? Register now!</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </main>
+        <%- footer %>
 </body>
 
 </html>

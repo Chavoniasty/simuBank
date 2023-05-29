@@ -10,8 +10,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const { firstName, lastName, email, password1, password2 } = req.body;
-    const validationError = registerFormValidation(firstName, lastName, email, password1, password2);
-    if (!validationError) {
+    if (!registerFormValidation(firstName, lastName, email, password1, password2)) {
         try {
             const newUser = new User({
                 firstName,
@@ -27,7 +26,7 @@ router.post('/', (req, res) => {
         }
     }
     else {
-        res.send(validationError);
+        res.send(registerFormValidation);
     }
 })
 

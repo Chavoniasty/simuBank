@@ -7,15 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline';">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <title>simuBank - Account</title>
 </head>
 
 <body>
-    <h1>
-        Hi, <%= user.firstName %>
-            <%= user.lastName %>
-    </h1>
-    <h2>Your balance: <%= user.balance %>$</h2>
+    <%- navbar %>
+        <main>
+            <div>
+                <div class="dash-name">
+                    <h1> Hi,<span class="green-text">
+                            <%= user.firstName %>
+                                <%= user.lastName %>
+                        </span></h1>
+                    <h2>Account balance: <span class="green-text">
+                            <%= user.balance %>$
+                        </span></h2>
+                    <button> Change account info</button>
+                </div>
+                <div class="dash-notifications">
+                    <h3>Notifications:</h3>
+                </div>
+
+                <div class="dash-functionalities">
+                    <button>Transfer money</button>
+                    <button>Pay bills</button>
+                    <button>Close account</button>
+                </div>
+        </main>
+        <%- footer %>
 </body>
 
 </html>

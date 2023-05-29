@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const mongoDBStore = require('connect-mongodb-session')(session);
+const renderNavbar = require('./views/components/navbar.js');
+const renderFooter = require('./views/components/footer.js');
 
 const app = express();
 
@@ -33,9 +35,17 @@ const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
 const accountRoute = require('./routes/account');
 
+app.use((req, res, next) => {
+    res.locals.navbar = renderNavbar(req.session.user || null);
+    res.locals.footer = renderFooter();
+    next();
+});
+
+
 app.use('/', indexRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/account', accountRoute);
+
 
 app.listen(3000)
