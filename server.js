@@ -38,14 +38,15 @@ const accountRoute = require('./routes/account');
 app.use((req, res, next) => {
     res.locals.navbar = renderNavbar(req.session.user || null);
     res.locals.footer = renderFooter();
+    if (req.url.endsWith('.js')) {
+        res.type('application/javascript');
+    }
     next();
 });
-
 
 app.use('/', indexRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/account', accountRoute);
-
 
 app.listen(3000)

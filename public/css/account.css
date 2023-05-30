@@ -1,0 +1,76 @@
+.account-dash {
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+    width: 40%;
+}
+
+.dash-name {
+    background-color: #499167;
+    color: #EEEEEE;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 5% 0 0 5%;
+    width: 40%;
+}
+
+
+.dash-menu {
+    display: flex;
+    flex-direction: column;
+    border: 1px #499167 solid;
+    border-radius: 0 5% 5% 0;
+    width: 60%;
+}
+
+.dash-notifications {
+    width: 80%;
+    height: 70%;
+}
+
+.dash-functionalities {
+    border-top: 1px #499167 solid;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30%;
+    align-items: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
