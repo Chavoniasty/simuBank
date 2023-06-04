@@ -2,13 +2,19 @@ const express = require('express');
 const router = express.Router();
 const user = require('../models/user');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     if (!req.session.user) {
         res.redirect('/login');
         return;
     }
-    let user = req.session.user;
-    res.render('account.ejs', { user: user })
+    try {
+        const loggedUser = await user.findOne({ email: req.session.user.email });
+
+        res.render('account.ejs', { user: loggedUser });
+    } catch (error) {
+        console.log(error);
+        // Handle the error appropriately
+    }
 })
 
 router.get('/logout', function (req, res) {
@@ -31,6 +37,8 @@ router.patch('/transfer', async (req, res) => {
 
         //DO NOT DELETE THIS LINE
         const transferAmount = parseFloat(amount);
+        console.log(transferAmount)
+        console.log(typeof transferAmount)
 
         if (loggedUser.balance >= transferAmount && transferAmount > 0) {
             loggedUser.balance -= transferAmount;
@@ -38,6 +46,13 @@ router.patch('/transfer', async (req, res) => {
 
             await loggedUser.save();
             await destination.save();
+
+            const updatedUser = await user.findOne({ email: req.session.user.email });
+
+            res.render('account.ejs', { user: updatedUser });
+
+            // Reload the page after a short delay
+
         }
     }
     catch (error) {

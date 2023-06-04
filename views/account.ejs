@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <link rel="stylesheet" type="text/css" href="/css/account.css">
     <script src="/js/transferWindow.js"></script>
+    <script src="/js/changeAccInfo.js"></script>
     <title>simuBank - Account</title>
 
 </head>
@@ -29,33 +30,45 @@
                     <h2>Account balance:
                         <%= user.balance %>$
                     </h2>
-                    <button> Change account info</button>
+                    <dialog id="changeDialog">
+                        <form id="changeForm">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" value="<%= user.firstName %>" required>
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" value="<%= user.lastName %>" required>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" value="<%= user.email %>" required>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                            <button type="submit">Change</button>
+                        </form>
+                        <button id="closeChangeDialog">Close</button>
+
+                    </dialog>
+                    <button id="changeDialogOpener">Change account info</button>
                 </div>
                 <div class="dash-menu">
                     <div class="dash-notifications">
                         <h3>Notifications:</h3>
                     </div>
                     <div class="dash-functionalities">
-                        <button id="a1">Transfer money</button>
+                        <dialog id="transferDialog">
+                            <form id="transferForm">
+                                <label for="destinationAccount">Destination Account:</label>
+                                <input type="text" id="destinationAccount" name="destinationAccount" required>
+                                <label for="amount">Amount:</label>
+                                <input type="text" id="amount" name="amount" required>
+                                <button type="submit">Transfer</button>
+                            </form>
+                            <button id="closeTransferDialog">Close</button>
+                        </dialog>
+                        <button id="transferDialogOpener">Transfer money</button>
                         <button>Pay bills</button>
                         <button>Close account</button>
                     </div>
                 </div>
             </div>
         </main>
-        <div id="transferModal" class="modal">
-            <div class="modal-content">
-                <span id="a2">&times;</span>
-                <h3>Transfer Money</h3>
-                <form id="transferForm">
-                    <label for="destinationAccount">Destination Account:</label>
-                    <input type="text" id="destinationAccount" name="destinationAccount" required>
-                    <label for="amount">Amount:</label>
-                    <input type="number" id="amount" name="amount" required>
-                    <button type="submit">Transfer</button>
-                </form>
-            </div>
-        </div>
         <%- footer %>
 </body>
 

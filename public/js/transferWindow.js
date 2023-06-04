@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const openTransferButton = document.getElementById('a1');
-    openTransferButton.addEventListener('click', () => {
-        const transferModal = document.getElementById('transferModal');
-        transferModal.style.display = 'block';
-    });
-
-    const closeTransferButton = document.getElementById('a2');
-    closeTransferButton.addEventListener('click', () => {
-        const transferModal = document.getElementById('transferModal');
-        transferModal.style.display = 'none';
-    });
-
+    const openTransferButton = document.getElementById('transferDialogOpener');
+    const closeTransferButton = document.getElementById('closeTransferDialog');
+    const transferDialog = document.getElementById('transferDialog');
     const transferForm = document.getElementById('transferForm');
+
+    openTransferButton.addEventListener('click', () => {
+        transferDialog.showModal();
+    });
+
+    closeTransferButton.addEventListener('click', () => {
+        transferDialog.close();
+    });
 
     transferForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -19,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             destinationAccount: transferForm.elements['destinationAccount'].value,
             amount: transferForm.elements['amount'].value
         }
+        closeTransferButton.click();
         fetch('/account/transfer', {
             method: 'PATCH',
             headers: {
@@ -26,12 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(requestBody)
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
     });
 });
